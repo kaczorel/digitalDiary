@@ -109,6 +109,8 @@ fun ImageEditor(
                     onDrag = { change, dragAmount ->
                         change.consume()
                         currentPath?.path?.lineTo(change.position.x, change.position.y)
+                        paths.remove(currentPath)
+                        paths.add(currentPath!!)
                     }
                 )
             }
